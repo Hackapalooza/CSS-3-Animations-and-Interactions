@@ -1,6 +1,5 @@
 # CSS Animations
-
-
+`
 To follow along with the slides, download this repo and open the index.html.
 
 ## Overview

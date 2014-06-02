@@ -10,6 +10,7 @@
 }
 .reveal .inline-container {
 	display: inline-block;
+	vertical-align: top;
 }
 .reveal .inline-container.two-col {
 	width: 49%;
@@ -113,19 +114,15 @@
 	-webkit-transform: rotateY(20deg);
 }
 .reveal .transform-rotatex-example {
-	-webkit-perspective: 500px;
 	-webkit-transform: rotateX(50deg);
 }
 .reveal .transform-rotatey-example {
-	-webkit-perspective: 500px;
 	-webkit-transform: rotateY(50deg);
 }
 .reveal .transform-translatez-example {
-	-webkit-perspective: 500px;
-	-webkit-transform: translateZ(100px);
+	-webkit-transform: translateZ(-100px);
 }
 .reveal .transform-scalez-example {
-	-webkit-perspective: 500px;
 	-webkit-transform: scaleZ(100px);
 }
 .reveal .flip-container {

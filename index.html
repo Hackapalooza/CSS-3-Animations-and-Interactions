@@ -475,7 +475,6 @@ div {
 						<li><code>rotateX()</code></li>
 						<li><code>rotateZ()</code></li>
 						<li><code>translateZ()</code></li>
-						<li><code>scaleZ()</code></li>
 					</ul>
 				</section>
 				<section>
@@ -484,7 +483,6 @@ div {
 						<p>rotateX</p>
 						<pre><code>
 div {
-    -webkit-perspective: 500px;
     -webkit-transform: rotateX(20deg);
 }
 						</code></pre>
@@ -492,7 +490,6 @@ div {
 							<p>rotateY</p>
 						<pre><code>
 div {
-    -webkit-perspective: 500px;
     -webkit-transform: rotateY(20deg);
 }
 						</code></pre>
@@ -503,19 +500,10 @@ div {
 						<p>translateZ</p>
 						<pre><code>
 div {
-    -webkit-perpsective: 500px;
-    -webkit-transform: translateZ(100px);
+    -webkit-transform: translateZ(-100px);
 }
 						</code></pre>
 						<div class="transform-translatez-example transform-example"></div>
-						<p>scaleZ</p>
-						<pre><code>
-div {
-    -webkit-perpspective: 500px;
-    -webkit-transform: scaleZ(100px);
-}
-						</code></pre>
-						<div class="transform-scalez-example transform-example"></div>
 					</div>
 				</section>
 				<section>
