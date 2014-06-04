@@ -96,22 +96,24 @@
     .menu li {
       display: inline-block;
       padding: 20px 35px;
+    }
+    #animate .menu li {
       transition: all 1s ease;
     }
-    .menu li:hover {
+    #animate .menu li:hover {
       background-color: #A8258D;
     }
-    .menu li:hover a {
+    #animate .menu li:hover a {
       color: #ffffff;
     }
-    .menu a {
+    #animate .menu a {
       text-decoration: none;
       color: #333333;
       font-weight: bold;
       text-transform: uppercase;
       font-family: 'Oswald', sans-serif;
     }
-    .logo:hover {
+    #animate .logo:hover {
       -webkit-animation: logo-animation 3s infinite;
     }
     @-webkit-keyframes logo-animation {
@@ -125,21 +127,21 @@
         -webkit-transform: scale(1);
       }
     }
-    .favourite-container {
+    #animate .favourite-container {
       display: inline-block;
+      -webkit-perspective: 600px;
     }
-    .favourite-container .item{
+    #animate .favourite-container .item{
       position: relative;
       height: 212px;
       transition: -webkit-transform 1s ease;
-      -webkit-perspective: 600px;
       -webkit-transform-style: preserve-3d;   
       -webkit-transform: rotateY(0deg);
     }
-    .item .favourite {
+    #animate .item .favourite {
       -webkit-transform: translateZ(-1px) rotateY(180deg);
     }
-    .item .front {
+    #animate .item .front {
       background-color: #A8258D;
       height: 212px;
       width: 212px;
@@ -149,13 +151,13 @@
       -webkit-transform: translateZ(1px) rotateY(0deg);
       -webkit-backface-visibility: hidden;
     }
-    .favourite-container:hover .item{
+    #animate .favourite-container:hover .item{
       -webkit-transform: rotateY(180deg);
       cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body id="animate">
   <ul class="menu">
     <li><a href="#about">About</a></li>
     <li><a href="#favourites">Favourites</a></li>

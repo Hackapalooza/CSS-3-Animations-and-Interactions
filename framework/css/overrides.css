@@ -1,4 +1,46 @@
 /* put specific overrides to CSS for your workshop in this file */
+.intro-container .box {
+	width: 25%;
+	padding-bottom: 25%;
+	background-color: #4452E8;
+	display: inline-block;
+}
+.intro-container .box-1 {
+	background-color: #4452E8;
+	-webkit-animation: box1 5s infinite;
+}
+.intro-container .box-2 {
+	background-color: #4FE3FF;
+	-webkit-animation: box1 6s infinite 1s;
+}
+.intro-container .box-3 {
+	background-color: #E84459;
+	-webkit-animation: box1 7s infinite 2s;
+}
+.intro-container .box-4 {
+	background-color: #FF904B;
+	-webkit-animation: box1 8s infinite 3s;
+}
+.intro-container .box-5 {
+	background-color: #9FFF56;
+	-webkit-animation: box1 9s infinite 4s;
+}
+.intro-container .box-6 {
+	background-color: #4BE894;
+	-webkit-animation: box1 10s infinite 5s;
+}
+@-webkit-keyframes box1 {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	50% {
+		-webkit-transform: scale(0.8);
+		border-radius: 50%;
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
 .reveal blockquote {
 	width: 100%;
 }

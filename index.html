@@ -39,6 +39,14 @@
 			<div class="slides">
 				<!-- begin editable section -->
 				<section class="center">
+					<div class="intro-container">
+						<div class="box box-1"></div>
+						<div class="box box-2"></div>
+						<div class="box box-3"></div>
+						<div class="box box-4"></div>
+						<div class="box box-5"></div>
+						<div class="box box-6"></div>
+					</div>
 				</section>
 
 				<!-- each <section> element creates a new slide. -->
@@ -64,11 +72,11 @@
 				<section class="center">
 					<h1>Overview</h1>
 					<ul>
-						<li>History</li>
-						<li>Flash</li>
-						<li>Transitions</li>
-						<li>Keyframes</li>
-						<li>3D</li>
+						<li class="fragment" data-fragment-index="1">History</li>
+						<li class="fragment" data-fragment-index="2">Flash</li>
+						<li class="fragment" data-fragment-index="3">Transitions</li>
+						<li class="fragment" data-fragment-index="4">Keyframes</li>
+						<li class="fragment" data-fragment-index="5">3D (if we have time)	</li>
 					</ul>
 				</section>
 
@@ -90,6 +98,14 @@
 					<blockquote>Rather than use Flash, Apple has adopted HTML5, CSS and JavaScript – all open standards. Apple’s mobile devices all ship with high performance, low power implementations of these open standards</blockquote>
 					<cite>-Steve Jobs</cite>
 					<p class="small">Source - <a href="http://www.apple.com/hotnews/thoughts-on-flash/" target="_blank">http://www.apple.com/hotnews/thoughts-on-flash/</a></p>
+				</section>
+
+				<section class="center">
+					<h2>Before we start</h2>
+					<p>Add an <code>id</code> to the body element.</p>
+					<pre><code>
+&lt;body id="animate">
+					</code></pre>
 				</section>
 
 				<section>
@@ -129,16 +145,14 @@ div:hover {
 				<section>
 					<p>Lets add some transitions to the menu on your site!</p>
 					<pre><code>
-.menu li {
-    display: inline-block;
-    padding: 20px 35px;
+#animate .menu li {
     transition: all 1s ease; /* Add transition */
 }
-.menu li:hover {
+#animate .menu li:hover {
     /* Add the hover state to transition too */
     background-color: #A8258D; 
 }
-.menu li:hover a {
+#animate .menu li:hover a {
     color: #ffffff; /* Lets also change the font color */
 }
 					</code></pre>
@@ -227,7 +241,7 @@ div {
 
 				<section>
 					<h2>2d Transforms</h2>
-					<p>Transform is another property you can use the <code>transition</code> on, lets look at some of the 2D transforms we can use:</p>
+					<p><code>transform</code> is another property you can use the <code>transition</code> on, lets look at some of the 2D transforms we can use:</p>
 					<ul>
 						<li><code>translate()</code></li>
 						<li><code>rotate()</code></li>
@@ -386,7 +400,7 @@ div {
 					<p>First set the animation on the element.</p>
 					<div class="fragment" data-fragment-index="1">
 						<pre><code>
-.logo:hover {
+#animate .logo:hover {
     -webkit-animation: logo-animation 3s infinite;
 }
 						</code></pre>
@@ -427,6 +441,7 @@ div {
 				</section>
 
 				<section>
+					<h1>Did we make it?</h1>
 					<h2>3D transforms</h2>
 					<p>Using the <code>transform</code> property we can create 3D effects</p>
 					<p>We can use the same functions to tranform our elements as before. With one small addition, the <code>perspective</code> property. This is applied to the parent container</p>
@@ -444,7 +459,9 @@ div {
 
 				<section>
 					<h2>Persepctive Examples</h2>
+					<p>The sweet spot is about 600/800px.</p>
 					<div class="inline-container two-col">
+						<p>Close</p>
 						<pre><code>
 div {
     -webkit-perspective: 100px;
@@ -456,7 +473,7 @@ div {
 						
 					</div>
 					<div class="inline-container two-col">
-						
+						<p>Mid</p>
 						<pre><code>
 div {
     -webkit-perspective: 600px;
@@ -530,10 +547,10 @@ div {
 &lt;/div>
 					</code></pre>
 					<pre><code>
-.favourtie-container {
+#animate .favourtie-container {
     display: inline-block;
 }
-.favourite-container .item{
+#animate .favourite-container .item{
     position: relative;
     height: 212px;
 }
@@ -543,7 +560,7 @@ div {
 				<section>
 					<p>Step 2:</p>
 					<pre><code>
-.item .front {
+#animate .item .front {
     background-color: #A8258D;
     height: 212px;  
     width: 212px;
@@ -557,13 +574,15 @@ div {
 					<p>Step 3:</p>
 					<p>Lets add the 3D portion.</p>
 					<pre><code>
-.favourite-container .item{
+#animate .favourtie-container {
+    /* Add element into 3D context */
+    -webkit-perspective: 600px; 
+}
+#animate .favourite-container .item{
     position: relative;
     height: 212px;
     /* Add a transition */
     transition: -webkit-transform 1s ease; 
-    /* Add element into 3D context */
-    -webkit-perspective: 600px; 
     /* Needed to allow the two faces to rotate */
     -webkit-transform-style: preserve-3d;   
     /* Set the initial value to 0 */
@@ -573,12 +592,13 @@ div {
 				</section>
 
 				<section>
+					<p>Step 3: continued</p>
 					<pre><code>
-.item .favourite {
+#animate .item .favourite {
     /* Rotate the image to the back and translate it behind */
     -webkit-transform: translateZ(-1px) rotateY(180deg); 
 }
-.item .front {
+#animate .item .front {
     /* ... */
     /* Translate the element to the front */
     -webkit-transform: translateZ(1px) rotateY(0deg); 
@@ -591,7 +611,7 @@ div {
 				<section>
 					<p>Step 4:</p>
 					<pre><code>
-.favourite-container:hover .item{
+#animate .favourite-container:hover .item{
     /* Rotate the container on hover */
     -webkit-transform: rotateY(180deg);
     cursor: pointer;
