@@ -1,0 +1,63 @@
+/*
+	Need to rotate the container?
+*/ 
+.container {
+	width: 400px;
+	height: 300px;
+	position: relative;
+	margin: 200px auto;
+	/*Set the perspective on the container*/
+	-webkit-perspective: 800;
+}
+.container .image-area {
+	height: 300px;
+	width: 400px;
+	opacity: 1;
+	/*Rotate the secondary container*/
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateX(0deg);
+	transition: all 1s ease;
+}
+.container .image-area.transition {
+	opacity: 0.8;
+}
+.container .image-area.first {
+	-webkit-transform: rotateX(0deg);
+}
+.container .image-area.second {
+	-webkit-transform: rotateX(90deg);
+}
+.container .image-area.third {
+	-webkit-transform: rotateX(180deg);
+}
+.container .item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+}
+.container .item.first {
+	-webkit-transform: rotateX(0deg) translateZ(150px);
+}
+.container .item.second {
+	-webkit-transform: rotateX(-90deg) translateZ(150px);
+}
+.container .item.third {
+	-webkit-transform: rotateX(-180deg) translateZ(150px);
+}
+.dot {
+	height: 20px;
+	width: 20px;
+	margin-top: 50px;
+	margin-right: 1em;
+	border-radius: 50%;
+	background-color: black;
+	display: inline-block;
+	opacity: 0.5;
+}
+.dot:hover {
+	cursor: pointer;
+}
+.dot.current {
+	opacity: 1;
+}
