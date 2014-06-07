@@ -595,6 +595,7 @@ div {
 #animate .favourite-container .item{
     position: relative;
     height: 212px;
+    width: 212px;
     /* Add a transition */
     transition: -webkit-transform 1s ease; 
     /* Needed to allow the two faces to rotate */
@@ -609,10 +610,12 @@ div {
 					<p>Step 3: continued</p>
 					<pre><code>
 #animate .item .favourite {
+	position: absolute;
     /* Rotate the image to the back and translate it behind */
     -webkit-transform: translateZ(-1px) rotateY(180deg); 
 }
 #animate .item .front {
+	position: absolute;
     /* ... */
     /* Translate the element to the front */
     -webkit-transform: translateZ(1px) rotateY(0deg); 
