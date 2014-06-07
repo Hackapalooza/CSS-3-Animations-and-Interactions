@@ -1,5 +1,5 @@
 # CSS Animations
-`
+
 To follow along with the slides, download this repo and open the index.html. Or you can follow along from [This](http://hackapalooza.github.io/CSS-3-Animations-and-Interactions/#/) url.
 
 ## Overview
