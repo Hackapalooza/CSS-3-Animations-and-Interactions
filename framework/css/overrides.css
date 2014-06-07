@@ -120,9 +120,16 @@
 		-webkit-transform: scale(1);
 	}
 }
+.reveal .transform-container {
+	-webkit-perspective: 600px;
+	position: relative;
+	height: 100px;
+	width: 100px;
+}
 .reveal .transform-example {
 	height: 100px;
 	width: 100px;
+	position: absolute;
 	background-color: #1A6373;
 }
 .reveal .transform-example.skewX{
