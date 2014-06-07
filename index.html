@@ -610,12 +610,14 @@ div {
 					<p>Step 3: continued</p>
 					<pre><code>
 #animate .item .favourite {
-	position: absolute;
+    position: absolute;
+    top: 0;
     /* Rotate the image to the back and translate it behind */
     -webkit-transform: translateZ(-1px) rotateY(180deg); 
 }
 #animate .item .front {
 	position: absolute;
+	top: 0;
     /* ... */
     /* Translate the element to the front */
     -webkit-transform: translateZ(1px) rotateY(0deg); 
